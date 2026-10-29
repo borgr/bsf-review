@@ -1,0 +1,24 @@
+{
+  "skills": [
+    "bsf-review"
+  ],
+  "query": "We adapted our ERC synopsis into this BSF plan. What would a BSF referee object to?",
+  "cwd": "evals/fixtures/erc-habits-at-bsf",
+  "files": [
+    "research_plan.tex"
+  ],
+  "tests": "that general rules are applied with the funder's force, not the ERC's (craft §1, small_grants §2–3, BSF §15 stage 5)",
+  "expected_behavior": [
+    "Notes that the checker finds no BLOCKs. Its SCOREs (missing opening, hypothesis, preliminary results, timeline, collaboration heading, pairing reason, visits) are true absences; it uses them as evidence and moves on to judgment stages.",
+    "Finds the risk section empty of content ('ambitious and … uncertain') and says that at the BSF feasibility and a fallback plan are scored by expert referees (criterion A, reviewer question 'including a fallback plan'). It does NOT apply the ERC rule that feasibility should not be argued.",
+    "Finds O3 ('a universal law … across all ecosystems') and the vision sentence oversized for a ~$300k, four-year, two-group grant, and names the cost: the 'majority Excellent' threshold means one referee's 'too ambitious' (criterion E) is enough to lose it (small_grants §2–3, BSF §6).",
+    "Finds item 5 ('necessary equipment and personnel') too thin to show what pays for the rest of the project, and costs it to D and E (BSF §4.9).",
+    "Notices there are no stated hypotheses or preliminary results, and asks what preliminary data exist rather than drafting any.",
+    "Does not invent results, equipment, or grants."
+  ],
+  "failure_modes": [
+    "Praising the ambitious vision as 'ERC-style ground-breaking' without weighing it against the grade scale.",
+    "Advising the authors to remove feasibility arguments, which is the ERC Step-1 rule applied at the wrong funder.",
+    "Flagging the collaboration as missing, or leading with the checker's collaboration SCOREs. It is thin but present (named groups, meetings), and the larger failures are A and E."
+  ]
+}

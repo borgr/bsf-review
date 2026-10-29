@@ -1,0 +1,23 @@
+{
+  "name": "ERC StG/CoG 2027 (B1/B2) -- a demonstration profile",
+  "guide": "ERC",
+  "verified": "2026-08-14, via erc-review's ERC_writing_guide.md §12; erc_check.py in erc-review remains the authority for ERC drafts",
+  "main_part": "b1",
+  "parts": {
+    "b1": {"stems": ["b1"], "page_limit": 10, "refs_excluded": true, "rule": "ERC §2",
+           "format": {"min_font_pt": 11, "min_margin_cm": 1.5, "rule": "ERC §7"}},
+    "b2": {"stems": ["b2"], "page_limit": 7, "refs_excluded": true, "rule": "ERC §2",
+           "format": {"min_font_pt": 11, "min_margin_cm": 1.5, "rule": "ERC §7"}}
+  },
+  "patterns": [
+    {"code": "instructions-on", "pattern": "showinstructions", "severity": "BLOCK", "message": "showinstructions is enabled; ERC boilerplate prints in the PDF", "rule": "ERC §13.3", "body_only": false},
+    {"code": "notes-visible", "pattern": "\\\\renewcommand\\{\\\\wzm\\}\\[1\\]\\{#1\\}", "severity": "BLOCK", "message": "\\wzm is set to reveal; private notes will print", "rule": "ERC §13.3", "body_only": false},
+    {"code": "feasible-assertion", "pattern": "\\bfeasib(?:le|ility)\\b", "flags": "i", "severity": "SCORE", "message": "\"{match}\" in B1 -- feasibility is not a Step-1 question; demonstrate in B2 instead", "rule": "ERC §7.8", "parts": ["b1"]},
+    {"code": "budget-in-b2", "pattern": "\\\\(?:sub)*section\\*?\\{[^}]*(?:Budget|Resources)[^}]*\\}", "flags": "i", "severity": "BLOCK", "message": "B2 must contain no budget table or resources section", "rule": "ERC §11", "parts": ["b2"]}
+  ],
+  "manual_checks": [
+    "B1 uploads as one combined PDF; references and appendix never uploaded separately (ERC §2).",
+    "Abstract within 2,000 characters in Part A (ERC §6); the Funding ID table is filled or says 'No funding' (ERC §2).",
+    "For the full ERC rule set run erc_check.py from the erc-review kit."
+  ]
+}

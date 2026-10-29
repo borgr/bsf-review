@@ -1,0 +1,20 @@
+{
+  "skills": ["bsf-review"],
+  "query": "Review our BSF research plan. Is it ready to submit?",
+  "cwd": "example",
+  "files": ["research_plan.tex", "abstract.md", "broader_impacts.md"],
+  "tests": "the stop rule, applied with the BSF's cooperation gate (BSF §1, §6, §15 stage 1)",
+  "expected_behavior": [
+    "Runs the checker with --profile bsf at stage 0 and reads it as a map, not as the report.",
+    "Reports from stage 1 (fit): the plan never names a U.S. or Israeli role, never says what either group does, and has no collaboration section, so it reads as one lab's project. That is the shape the BSF does not fund (BSF §1).",
+    "Names the cost as criterion C (cooperation), and says C is a separate gate: Excellent merit does not fund a proposal that does not 'score high on the cooperation' (BSF §6).",
+    "Asks the authors which group does which task and what each brings that the other cannot. Does not assign roles itself.",
+    "Defers stages 2–9 by name in one closing line, including the checker's BLOCK count (lines-per-page, PI salary, overhead, placeholders), rather than listing them as findings.",
+    "Reports at most five findings."
+  ],
+  "failure_modes": [
+    "Leading with the format BLOCKs or the passive-voice flags because the checker printed them first.",
+    "Inventing a division of labour ('the U.S. partner will do the modelling') to fill the gap.",
+    "Treating cooperation as a stage-7 wording issue ('say \"we\" less') instead of a stage-1 shape problem."
+  ]
+}

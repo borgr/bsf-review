@@ -1,0 +1,529 @@
+{
+  "name": "BSF Research Grants 2026 (regular and start-up)",
+  "guide": "BSF",
+  "verified": "2026-10-28, against the BSF 2026 Regulations (updated Aug 2026) and BSF Guidelines for Reviewers",
+  "main_part": "research_plan",
+  "parts": {
+    "research_plan": {
+      "stems": [
+        "research_plan",
+        "researchplan",
+        "plan",
+        "proposal"
+      ],
+      "page_limit": 15,
+      "refs_excluded": true,
+      "rule": "BSF §3",
+      "required_heading": "Research Plan",
+      "format": {
+        "min_font_pt": 12,
+        "min_line_spacing": 1.5,
+        "min_margin_cm": 2.0,
+        "max_lines_per_page": 38,
+        "rule": "BSF §3"
+      },
+      "required_content": [
+        {
+          "code": "item1-background",
+          "any": [
+            "background",
+            "state of the art",
+            "prior work"
+          ],
+          "message": "required item 1 (subject and scientific background) has no visible address",
+          "rule": "BSF §4.2"
+        },
+        {
+          "code": "item2-objectives",
+          "any": [
+            "objective",
+            "\\baims?\\b",
+            "\\bgoals?\\b",
+            "research questions?",
+            "Problem\\s*\\d"
+          ],
+          "message": "required item 2 (objectives) has no visible address",
+          "rule": "BSF §4.4"
+        },
+        {
+          "code": "item2-significance",
+          "any": [
+            "significan",
+            "importance",
+            "impact"
+          ],
+          "message": "required item 2 (significance) has no visible address",
+          "rule": "BSF §4.4"
+        },
+        {
+          "code": "item3-methods",
+          "any": [
+            "method",
+            "approach",
+            "plan of operation",
+            "work plan",
+            "research plan"
+          ],
+          "message": "required item 3 (methodology and plan of operation) has no visible address",
+          "rule": "BSF §4.5"
+        },
+        {
+          "code": "item3-israeli-role",
+          "any": [
+            "Israel"
+          ],
+          "message": "required item 3 asks for the role of the Israeli PI(s); the plan never mentions Israel",
+          "rule": "BSF §4.7"
+        },
+        {
+          "code": "item3-us-role",
+          "any": [
+            "(?-i:\\bU\\.S\\.?|\\bUSA?\\b)",
+            "American",
+            "United States"
+          ],
+          "message": "required item 3 asks for the role of the U.S. PI(s); the plan never names the U.S. side",
+          "rule": "BSF §4.7"
+        },
+        {
+          "code": "item4-risk",
+          "any": [
+            "risk",
+            "alternative (?:paths?|approach|strateg|plan|route|method)",
+            "fallback",
+            "contingenc",
+            "if .{0,40} fails"
+          ],
+          "severity": "SCORE",
+          "message": "item 4 (risk analysis and alternative paths) has no visible address -- required where relevant, and reviewers are asked about a fallback plan",
+          "rule": "BSF §4.8"
+        },
+        {
+          "code": "item5-resources",
+          "any": [
+            "resources",
+            "facilit",
+            "equipment",
+            "infrastructure"
+          ],
+          "message": "required item 5 (available U.S. and Israeli resources, personnel and equipment) has no visible address",
+          "rule": "BSF §4.9"
+        },
+        {
+          "code": "collaboration-section",
+          "any": [
+            "collaborat",
+            "cooperat",
+            "partnership"
+          ],
+          "message": "no heading names the collaboration -- cooperation is scored separately; give it its own section",
+          "severity": "SCORE",
+          "rule": "BSF §4.7",
+          "headings_only": true
+        },
+        {
+          "code": "opening-hypothesis",
+          "within_words": 300,
+          "any": [
+            "hypothes",
+            "conjecture",
+            "we (?:propose|predict|posit|argue) that",
+            "central question",
+            "we ask (?:whether|how|why)",
+            "test whether"
+          ],
+          "severity": "SCORE",
+          "rule": "BSF §4.1",
+          "message": "the opening, before item 1, states no hypothesis, conjecture or central question -- the adviser's summary starts there",
+          "until_heading": "background|state of the art|^\\W*1\\b"
+        },
+        {
+          "code": "opening-objectives",
+          "within_words": 300,
+          "any": [
+            "objective",
+            "\\baims?\\b",
+            "\\bO1\\b"
+          ],
+          "severity": "SCORE",
+          "rule": "BSF §4.1",
+          "message": "the opening, before item 1, names no objectives -- in the mandated order item 2 starts around page 5",
+          "until_heading": "background|state of the art|^\\W*1\\b"
+        },
+        {
+          "code": "opening-collaboration",
+          "within_words": 300,
+          "any": [
+            "both (?:groups|labs|teams|partners|sides|PIs)",
+            "neither",
+            "complementar",
+            "each (?:group|lab|team|side)",
+            "two (?:groups|labs|teams)",
+            "(?:work|working|combin\\w*|bring\\w*) together",
+            "\\bjoint (?:work|effort|project|programme|program|research|study)",
+            "(?:Israeli|American|(?-i:\\bU\\.S\\.?|\\bUSA?\\b)) (?:group|lab|team|partner|PI)"
+          ],
+          "severity": "SCORE",
+          "rule": "BSF §4.1",
+          "message": "the opening never says why the project needs two groups",
+          "until_heading": "background|state of the art|^\\W*1\\b"
+        },
+        {
+          "code": "hypothesis-stated",
+          "any": [
+            "hypothes",
+            "conjecture",
+            "we predict",
+            "we expect that",
+            "test whether"
+          ],
+          "severity": "SCORE",
+          "rule": "BSF §6",
+          "message": "no hypothesis, conjecture or prediction anywhere -- 'Fair' proposals 'lack a clear research question and hypotheses'"
+        },
+        {
+          "code": "preliminary-results",
+          "any": [
+            "preliminary",
+            "\\bpilot",
+            "our (?:recent |previous |own )?(?:results|data|findings)",
+            "we (?:have )?(?:recently )?(?:found|showed|shown|observed|proved|demonstrated)",
+            "feasibility"
+          ],
+          "severity": "SCORE",
+          "rule": "BSF §4.3",
+          "message": "no preliminary results or feasibility evidence -- referees score feasibility (start-ups: argue it instead, BSF §12)"
+        },
+        {
+          "code": "timeline",
+          "any": [
+            "timeline",
+            "time line",
+            "schedule",
+            "milestone",
+            "Gantt",
+            "\\byears? [1-4]\\b",
+            "\\bY[1-4]\\b",
+            "\\bmonths? \\d"
+          ],
+          "severity": "SCORE",
+          "rule": "BSF §4.5",
+          "message": "no timeline or milestones -- criterion E asks whether the schedule is realistic"
+        },
+        {
+          "code": "pairing-reason",
+          "any": [
+            "complementar",
+            "neither (?:group|lab|team|side|partner|PI)",
+            "(?:requires|needs|depends on) both",
+            "(?:cannot|could not|can't|unable to)[^.]{0,80}\\balone\\b",
+            "each (?:group|side|team|lab|PI) (?:brings|contributes|provides)",
+            "only (?:the|our) [\\w'-]+ (?:group|lab|team)"
+          ],
+          "severity": "SCORE",
+          "rule": "BSF §4.7",
+          "message": "no sentence says what the pairing makes possible that neither group can do alone"
+        },
+        {
+          "code": "exchange-visits",
+          "any": [
+            "\\bvisit",
+            "exchange of (?:students|scientists|personnel|researchers)",
+            "sabbatical",
+            "\\bstays? (?:at|in) "
+          ],
+          "severity": "SCORE",
+          "rule": "BSF §4.7",
+          "message": "no exchange visits are planned -- give who, how long and when"
+        },
+        {
+          "code": "gai-disclosure",
+          "any": [
+            "generative AI",
+            "large language model",
+            "\\bLLM",
+            "\\bChatGPT\\b",
+            "\\bGAI\\b",
+            "AI assist"
+          ],
+          "severity": "POLISH",
+          "message": "the BSF encourages stating whether and how generative AI was used in preparing the proposal",
+          "rule": "BSF §3"
+        }
+      ],
+      "task_owner": {
+        "any": [
+          "\\bIsrael",
+          "(?-i:\\bU\\.S\\.?|\\bUSA?\\b)",
+          "\\bAmerican",
+          "\\bboth (?:groups|labs|teams|sites|PIs)\\b",
+          "\\bjoint(?:ly)?\\b",
+          "\\bco-led\\b",
+          "\\bled by\\b",
+          "(?-i:\\b(?!(?:The|This|That|These|Those|Each|Every|Our|One|Any|A|An|Control|Research|Study)\\b)[A-Z][a-z]+) (?:group|lab|team|site)\\b",
+          "\\bthe other (?:group|lab|team|site)\\b",
+          "\\bpartner"
+        ],
+        "severity": "SCORE",
+        "rule": "BSF §7"
+      },
+      "unit_requirements": [
+        {
+          "code": "objective-success",
+          "title": "^(?:[\\d.]+\\s*)?(?:Specific\\s+)?(?:Objective|Aim|Goal|Problem|Research\\s+question|RQ|Thrust|WP|Work\\s+package)\\s*(?:\\d|(?-i:[IVX]+)\\b)|^(?:[\\d.]+\\s*)?(?-i:O\\d)[.:)]",
+          "min_words": 120,
+          "any": [
+            "success",
+            "criteri",
+            "we (?:will )?(?:consider|conclude)",
+            "(?:is|are|be) (?:supported|confirmed|rejected|refuted|falsified) if",
+            "benchmark",
+            "expected (?:outcomes?|results?)",
+            "threshold",
+            "outperform",
+            "milestone"
+          ],
+          "severity": "SCORE",
+          "rule": "BSF §4.6",
+          "message": "no expected outcome or success criterion -- a referee cannot tell what counts as success",
+          "within": "method|plan of operation|research design|work plan|strategy|approach"
+        },
+        {
+          "code": "objective-pitfalls",
+          "title": "^(?:[\\d.]+\\s*)?(?:Specific\\s+)?(?:Objective|Aim|Goal|Problem|Research\\s+question|RQ|Thrust|WP|Work\\s+package)\\s*(?:\\d|(?-i:[IVX]+)\\b)|^(?:[\\d.]+\\s*)?(?-i:O\\d)[.:)]",
+          "min_words": 120,
+          "any": [
+            "pitfall",
+            "alternative",
+            "fallback",
+            "contingenc",
+            "\\bif\\b[^.]{0,80}\\b(?:fails?|not|insufficient|unsuccessful|cannot|resists?)\\b",
+            "even if",
+            "\\brisks?\\b"
+          ],
+          "severity": "SCORE",
+          "rule": "BSF §4.6",
+          "message": "no pitfalls or alternatives in this block -- put the fallback next to the claim it protects",
+          "within": "method|plan of operation|research design|work plan|strategy|approach"
+        }
+      ],
+      "max_objectives": {
+        "pattern": "\\b(?:Specific\\s+)?(?:Objective|Aim)\\s*([1-9])\\b|\\b(?-i:O([1-9]))(?=[.:)])",
+        "max": 4,
+        "severity": "SCORE",
+        "rule": "BSF §4.4",
+        "message": "a 15-page plan carries two or three, four at most"
+      },
+      "proportions": [
+        {
+          "code": "methods-share",
+          "a": "method|plan of operation|research design|work plan|experimental design|^(?:[\\dA-Z][.)]?[\\d.]*\\s*)?(?:approach|research strategy)",
+          "b": "background|state of the art|introduction|objective|significance|preliminary|specific aims|^(?:[\\d.]+\\s*)?aims\\b",
+          "ratio": 1.0,
+          "severity": "SCORE",
+          "rule": "BSF §4",
+          "message": "item 3 should be at least as long as items 1 and 2 together, preliminary results included"
+        }
+      ],
+      "item_headings": "background|state of the art|introduction|objective|significance|aims|method|plan of operation|research design|strategy|approach|risk|alternative|resources|collaborat"
+    },
+    "abstract": {
+      "stems": [
+        "abstract"
+      ],
+      "word_limit": 250,
+      "word_floor": 120,
+      "rule": "BSF §8",
+      "required_heading": "Abstract",
+      "required_content": [
+        {
+          "code": "abstract-contribution",
+          "any": [
+            "contribut",
+            "will (?:enable|establish|reveal|determine|advance|provide)"
+          ],
+          "severity": "SCORE",
+          "message": "the abstract must include 'a statement of the project's potential contribution' to the field",
+          "rule": "BSF §8"
+        }
+      ]
+    },
+    "broader_impacts": {
+      "stems": [
+        "broader_impacts",
+        "broader_impact",
+        "impact_statement",
+        "impact"
+      ],
+      "word_limit": 250,
+      "word_limit_severity": "SCORE",
+      "rule": "BSF §8",
+      "required_heading": "Broader Impacts Statement"
+    },
+    "references": {
+      "stems": [
+        "references",
+        "bibliography",
+        "refs"
+      ],
+      "required": false,
+      "rule": "BSF §10",
+      "required_heading": "References"
+    },
+    "resubmission_letter": {
+      "stems": [
+        "resubmission_letter",
+        "resubmission",
+        "response_letter"
+      ],
+      "required": false,
+      "page_limit": 5,
+      "rule": "BSF §11",
+      "required_heading": "Resubmission Letter",
+      "required_content": [
+        {
+          "code": "resub-summary",
+          "any": [
+            "summary of (?:the )?(?:major )?changes",
+            "major changes",
+            "main changes",
+            "we have (?:substantially )?revised"
+          ],
+          "severity": "SCORE",
+          "message": "open with a summary of the major changes before the point-by-point answers",
+          "rule": "BSF §11"
+        },
+        {
+          "code": "resub-panel",
+          "any": [
+            "panel",
+            "committee",
+            "summary of the (?:reviews|evaluation)"
+          ],
+          "severity": "SCORE",
+          "message": "the panel summary is never addressed -- answer it first, before individual reviews",
+          "rule": "BSF §11"
+        },
+        {
+          "code": "resub-locations",
+          "any": [
+            "\\b(?:p\\.|page|pp\\.)\\s*\\d+",
+            "[Ss]ection\\s*\\d"
+          ],
+          "severity": "SCORE",
+          "message": "no change is located by section or page -- old reviewers check that claimed changes exist",
+          "rule": "BSF §11"
+        }
+      ]
+    },
+    "progress_report": {
+      "stems": [
+        "progress_report"
+      ],
+      "required": false,
+      "page_limit": 1,
+      "rule": "BSF §11",
+      "required_heading": "Progress Report"
+    },
+    "lay_abstract": {
+      "stems": [
+        "lay_abstract",
+        "lay_summary",
+        "lay"
+      ],
+      "required": false,
+      "rule": "BSF §8"
+    },
+    "publications": {
+      "stems": [
+        "publications",
+        "publication_list",
+        "pubs"
+      ],
+      "required": false,
+      "page_limit": 5,
+      "rule": "BSF §10",
+      "required_heading": "Publications",
+      "format": {
+        "min_font_pt": 12,
+        "min_line_spacing": 1.5,
+        "min_margin_cm": 2.0,
+        "rule": "BSF §10"
+      }
+    }
+  },
+  "patterns": [
+    {
+      "code": "pi-salary",
+      "pattern": "(?:summer|PI|investigator'?s?) salar(?:y|ies)|salary (?:for|of) the PIs?",
+      "flags": "i",
+      "severity": "BLOCK",
+      "message": "\"{match}\" -- Israeli and U.S. PIs cannot receive or supplement salary from a BSF award",
+      "rule": "BSF §9"
+    },
+    {
+      "code": "budget-overhead",
+      "pattern": "\\b(?:1[6-9]|[2-9]\\d)\\s*\\\\?%\\s*(?:overhead|indirect)|(?:overhead|indirect)[^.]{0,30}\\b(?:1[6-9]|[2-9]\\d)\\s*\\\\?%",
+      "flags": "i",
+      "severity": "BLOCK",
+      "message": "\"{match}\" -- BSF overhead is 15% on all items",
+      "rule": "BSF §9"
+    },
+    {
+      "code": "book-output",
+      "pattern": "\\b(?:monograph|write a book|book manuscript)\\b",
+      "flags": "i",
+      "severity": "SCORE",
+      "message": "\"{match}\" -- the BSF does not support preparing or publishing books or monographs",
+      "rule": "BSF §1"
+    },
+    {
+      "code": "third-country-pi",
+      "pattern": "\\b(?:German|French|British|Swiss|Chinese|Canadian|European) (?:PI|co-PI|partner)\\b",
+      "flags": "i",
+      "severity": "SCORE",
+      "message": "\"{match}\" -- a third-country scientist may only be an unpaid consultant",
+      "rule": "BSF §2"
+    },
+    {
+      "code": "we-all-the-way",
+      "pattern": "(?:\\bWe will\\b[^.]*\\.\\s*){3,}",
+      "flags": "",
+      "severity": "SCORE",
+      "message": "three or more 'We will' sentences in a row -- say which group does each step; cooperation is scored",
+      "rule": "BSF §7",
+      "parts": [
+        "research_plan"
+      ],
+      "scope": "paragraph"
+    },
+    {
+      "code": "co-pi-term",
+      "pattern": "\\bco-?PIs?\\b",
+      "flags": "i",
+      "severity": "POLISH",
+      "message": "the BSF does not use 'co-PI': every investigator is a PI unless named an unpaid advisor or consultant",
+      "rule": "BSF §2",
+      "once": true
+    },
+    {
+      "code": "defensive-reply",
+      "pattern": "\\b(?:the )?reviewer (?:missed|misunderstood|failed to|overlooked|did not read)|\\bas (?:was )?(?:clearly|already) stated\\b|\\bcontrary to (?:what )?the reviewer",
+      "flags": "i",
+      "severity": "SCORE",
+      "message": "\"{match}\" -- answer the concern with evidence, not the reviewer",
+      "rule": "BSF §11",
+      "parts": [
+        "resubmission_letter"
+      ]
+    }
+  ],
+  "manual_checks": [
+    "Area of research is open this year (even years: exact, physical and social sciences; odd: life and health sciences) and the panel in Appendix II is the one you want (BSF §2).",
+    "Six suggested reviewers, at most three from Israel, none a co-author (papers with up to five authors or grants) in five years, adviser/student, departmental colleague, or consultant (BSF §10).",
+    "Every PI uploads a signed letter of collaboration on letterhead stating their role; a PI requesting no funds explains how they will contribute (BSF §10).",
+    "Budget: total including 15% overhead within $300,000 (start-up: fixed $90,000), equipment within 20% of the total, publication charges within $1,000/yr and $3,000 per project for joint papers, budget year starting October or later, no price-increase escalation (BSF §9).",
+    "The final generated PDF has been opened and checked against Appendix III, and the checklist uploaded (BSF §3).",
+    "Grants office deadline, not only the BSF deadline: the institution submits (BSF §2)."
+  ]
+}

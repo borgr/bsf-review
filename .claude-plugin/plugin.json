@@ -1,0 +1,10 @@
+{
+  "name": "bsf-review",
+  "description": "Two skills for grant proposals. grant-review reviews any funder's proposal top-down against a criteria map built from the call, stops at the highest failing level, and knows what changes at small and collaborative funders. bsf-review layers the U.S.-Israel Binational Science Foundation's rules on top: cooperation as a separate gate, the majority-Excellent threshold, the five required research-plan items and the format rules. One profile-driven checker serves both.",
+  "version": "0.1.0",
+  "author": { "name": "Leshem Choshen", "url": "https://github.com/borgr" },
+  "homepage": "https://github.com/borgr/bsf-review",
+  "repository": "https://github.com/borgr/bsf-review",
+  "license": "MIT AND CC-BY-4.0",
+  "keywords": ["bsf", "binational-science-foundation", "nsf-bsf", "grant", "grant-writing", "proposal", "review", "collaboration", "academic-writing", "latex", "docx"]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "bsf-review",
+  "owner": { "name": "Leshem Choshen", "url": "https://github.com/borgr" },
+  "metadata": {
+    "description": "A grant proposal review kit: a funder-independent review protocol and checker, with a full overlay for the U.S.-Israel Binational Science Foundation."
+  },
+  "plugins": [
+    {
+      "name": "bsf-review",
+      "source": "./",
+      "description": "Reviews grant drafts top-down against what the panel scores. General for any funder; specific for BSF Research Grants (regular, start-up) and NSF-BSF.",
+      "version": "0.1.0"
+    }
+  ]
+}

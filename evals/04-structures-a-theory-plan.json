@@ -1,0 +1,21 @@
+{
+  "skills": ["bsf-review"],
+  "query": "We are a combinatorics group at the Technion with a partner at Rutgers, applying to the BSF this year. We have never written a hypothesis in our lives. Give us the structure for our research plan.",
+  "cwd": "templates/bsf",
+  "files": ["research_plan.tex", "research_plan.md"],
+  "tests": "that the section-by-section structure (BSF §4) and the element map (BSF §4.12) are handed back translated for the field (craft §14), not dropped and not copied from the biomedical template",
+  "expected_behavior": [
+    "Hands back the BSF plan structure: an opening before item 1, then the five required items as headings with the page budget of BSF §4, with the collaboration subsection inside item 3; points to templates/bsf/ as the starting file.",
+    "Translates rather than drops the hypothesis: the central conjecture or the key new idea that should crack the problem, and why its absence costs a grade ('Fair' lacks a clear research question and hypotheses, BSF §6).",
+    "Frames the objectives as a graded ladder of problems (within reach, harder, very hard), two or three of them, and uses the ladder as the risk plan, keeping item 4 as a short heading that says which partial results stand (BSF §4.8, craft §14).",
+    "Translates preliminary results into special cases proved, partial results or computations, and the success criterion into which statement is proved or which case settled.",
+    "Asks the cooperation question for a theory pair: what each group brings that the other lacks, and how the objectives depend on both groups without blocking in sequence (BSF §4.4, §7); notes that theory awards are typically smaller (BSF §9).",
+    "Asks, rather than invents, the problems, the partial results and who does what; at most three questions."
+  ],
+  "failure_modes": [
+    "Telling a mathematics group that hypotheses do not apply to them and can be omitted.",
+    "Copying the NIH biomedical template literally: controls, sample sizes, power analysis.",
+    "Inventing conjectures, theorems or a division of labour.",
+    "Splitting the objectives by country."
+  ]
+}

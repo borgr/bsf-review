@@ -1,0 +1,299 @@
+% BSF Research Plan -- annotated skeleton.
+%
+% Every [[...]] is a slot to fill; grant_check.py reports each one left as a BLOCK, so
+%   python3 <kit>/skills/grant-review/tools/grant_check.py --profile bsf research_plan.tex
+% tells you what is still unwritten. Comments starting "% BSF §" point to the rule in
+% skills/bsf-review/references/BSF_writing_guide.md. Delete the guidance comments when done
+% if you like; they are never typeset.
+%
+% Format (BSF §3): 12 pt, line spacing 1.5 or 2, at most 38 lines per page, margins >= 2 cm,
+% A4 (or US Letter if the initiating PI is in the U.S.). \linespread{1.5} gives ~34 lines;
+% setspace's \onehalfspacing gives ~40 and breaks the cap. Items 1-5 fit in 15 pages,
+% figures included; references go after them and do not count.
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=2cm]{geometry}
+\linespread{1.5}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage[hidelinks]{hyperref}
+\usepackage[font=small,labelfont=bf]{caption}   % captions may be smaller, but readable (BSF §3)
+\setlength{\parskip}{0.3em}
+\setlength{\parindent}{0pt}
+% Optional: margin comments keyed to rules while you revise (\grscore{BSF 4.6}{...}).
+% \usepackage{grantreview}
+
+\begin{document}
+
+% The heading must contain "Research Plan". A title is not needed (BSF §3).
+\section*{Research Plan}
+
+% ---------------------------------------------------------------------------------------
+% OPENING -- 1/2 page, ~200 words (BSF §4.1). The adviser's summary of you starts here.
+% Eight moves, one or two sentences each. Item 2 begins around page 5 in the mandated
+% order, so a referee must have the question, hypothesis, objectives and the reason for
+% two groups by the end of this box.
+% ---------------------------------------------------------------------------------------
+\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{%
+% 1 Stakes: the larger problem the answer matters to. Not a history of the field.
+[[Stakes, one sentence.]]
+% 2 The question and why it is open: what specifically is unknown + the barrier (craft §2.2-2.3).
+[[The question, and the barrier that has kept it open.]]
+% 3 Long-term goal (the vision), one sentence only at the BSF (craft §3).
+[[Long-term goal of the two groups.]]
+% 4 This grant's aim and the central hypothesis (or central question / conjecture, BSF §4.12).
+Our central hypothesis is that [[testable claim]].
+% 5 Why it is testable now: the enabling result, preferably your own, and whose it is.
+[[Enabling result and which group produced it.]]\par
+% 6 Objectives, a line each, bold, numbered as in item 2. Two or three; four at most.
+\textbf{Objective 1:} [[Determine whether ...]]\\
+\textbf{Objective 2:} [[Identify / quantify ...]]\\
+\textbf{Objective 3:} [[... (the riskiest one last)]]\par
+% 7 Why these two groups: what each brings that the other lacks, and that the question needs both.
+[[The Israeli group brings ...; the U.S. group brings ...; the question needs both because ...]]
+% 8 Payoff: what will be known at the end that is not known now.
+[[Payoff, one sentence.]]
+}}
+
+% ---------------------------------------------------------------------------------------
+% ITEM 1 -- 2 to 2.5 pages (BSF §4.2). An argument, not a survey. Two to four sub-areas,
+% each tied to an objective, each in four beats: known -> limitation -> barrier -> how this
+% project moves past it. Cover BOTH groups' literatures at the same depth. Explain local
+% (Israeli) sites, cohorts or datasets in a clause: 4 in 5 referees are not Israeli. The BSF
+% picks referees from your references, so cite the field fairly and fully.
+% ---------------------------------------------------------------------------------------
+\section{Background and state of the art: [[your words]]}
+
+\subsection{[[Sub-area A, tied to Objective 1]]}
+[[What is known. Its limitation. The barrier that holds the field there. How this project
+moves past it.]]
+
+\subsection{[[Sub-area B, tied to Objective 2]]}
+[[Four beats, as above. Name the closest prior work and what is different here
+(the reviewer form's ``transformative ... not repetitive'').]]
+
+% End item 1 on the gap paragraph: the specific unknown, why it is unknown, what changed.
+\paragraph{The gap.} [[The specific unknown, why it has stayed unknown, and what now makes it
+answerable.]]
+
+% ---------------------------------------------------------------------------------------
+% 1b PRELIMINARY RESULTS -- 3/4 to 1 page (BSF §4.3). Only the one or two results that
+% motivate the WHOLE project; evidence for each objective goes in its block below (2-3 pages
+% of evidence in all). From BOTH groups; one joint result if you have it. Each figure: a
+% caption that states the finding, the group that produced it, n and the comparison. Say what
+% the data do NOT settle -- that is the reason for the grant. Start-up: argue feasibility here
+% instead of showing data (BSF §12). Theory: special cases, partial results (craft §14).
+% ---------------------------------------------------------------------------------------
+\subsection{Preliminary results}
+
+\paragraph{[[Finding 1, stated as a result]] ([[which group]]).}
+[[What was done, what it shows, and what it does not settle.]]
+% \begin{figure}[t]\centering
+% \includegraphics[width=.8\linewidth]{fig1}
+% \caption{\textbf{[[The finding, as a sentence.]]} [[Group, n, comparison.]]}
+% \end{figure}
+
+\paragraph{[[Finding 2]] ([[the other group]]).}
+[[What was done, what it shows, and what it does not settle.]]
+
+% ---------------------------------------------------------------------------------------
+% ITEM 2 -- 1 page (BSF §4.4). Two or three objectives, four at most. Each: a bold knowledge
+% claim (not "to understand / to study", not a deliverable), its working hypothesis, one
+% line of route, who leads and what the other group contributes, and its link to the others.
+% Do NOT split objectives by country. Interdependent across the groups, but not blocking in
+% sequence: each yields a result if another underperforms. Order them so risk rises.
+% ---------------------------------------------------------------------------------------
+\section{Objectives and significance}
+
+\textbf{Objective 1: [[Determine whether ...]]} Working hypothesis: [[...]]. [[Route in one
+sentence.]] Led by the [[Israeli / U.S.]] group, with [[what the other group contributes]].
+[[What it gives Objective 2.]]
+
+\textbf{Objective 2: [[...]]} Working hypothesis: [[...]]. [[Route.]] Led by [[...]], with
+[[...]]. [[Link.]]
+
+\textbf{Objective 3: [[...]]} Working hypothesis: [[...]]. [[Route.]] Led by [[...]], with
+[[...]]. [[If this is the risky one: the project stands without it because ...]]
+
+% One sentence on how the objectives depend on each other across the groups without blocking.
+[[Each objective feeds the other group's ... ; each yields a result even if ...]]
+
+% Significance: forward-looking, not the background again. What changes in the field when
+% the objectives are met, with a "because" (craft §8). Criterion B. One sentence of social or
+% economic value at most; the Broader Impacts Statement carries the rest (BSF §8).
+\paragraph{Significance.} [[Which belief is confirmed or overturned, which method becomes
+possible, which questions open -- because ...]]
+
+% ---------------------------------------------------------------------------------------
+% ITEM 3 -- about 8 to 9 pages: overview, one block per objective, collaboration (BSF §4.5-4.7).
+% At least as long as items 1 and 2 together. The regulation requires the respective roles
+% of the Israeli and American PIs here.
+% ---------------------------------------------------------------------------------------
+\section{Methodology and plan of operation}
+
+% Overview, 1/2 to 3/4 page (BSF §4.5): the logic of the plan, ONE design figure with the two
+% groups as lanes and arrows for what crosses between them, shared methods stated once, and
+% the timeline.
+[[One paragraph: how the objectives follow from each other, and why this structure fits the
+question.]]
+% \begin{figure}[t]\centering
+% \includegraphics[width=\linewidth]{design}
+% \caption{\textbf{Project design.} Objectives as rows, the two groups as lanes; arrows are
+% samples, data, models and people crossing between the groups.}
+% \end{figure}
+
+\paragraph{Shared methods.} [[Datasets, statistics, validation, data sharing between sites --
+stated once here.]]
+
+% Timeline: milestones, decision points and exchange visits marked; who works in each period.
+% A milestone is a RESULT ("Month 18: rates for >= 30 communities; decides route A or B"),
+% not an activity ("complete Objective 2 experiments"). It must tell the same story as the
+% work schedule in the online form (criterion E).
+\paragraph{Timeline.}
+\begin{center}
+\begin{tabularx}{\linewidth}{lXXXX}
+\toprule
+ & Year 1 & Year 2 & Year 3 & Year 4 \\
+\midrule
+Objective 1 & [[tasks, who]] & [[milestone]] & & \\
+Objective 2 & & [[tasks, who]] & [[decision point]] & \\
+Objective 3 & & & [[tasks, who]] & [[...]] \\
+Visits & [[who, where, how long]] & [[...]] & [[...]] & [[...]] \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+% One block per objective, 2-2.5 pages each (BSF §4.6). The same five parts in every block.
+% Spend method detail where the risk is: new or untested methods in full, routine ones briefly.
+\subsection{Objective 1: [[the bold claim again, shortened]]}
+
+% (1) Rationale and working hypothesis, 2-4 sentences.
+\paragraph{Rationale and hypothesis.} [[Why this objective is needed and what it tests.]]
+
+% (2) Preliminary evidence specific to this objective, and which group produced it.
+\paragraph{Preliminary evidence.} [[A number or a figure for this objective, or a pointer to
+the preliminary results in Section 1; which group produced it.]]
+
+% (3) Tasks. Each: purpose, approach at expert level (controls, n or power, validation,
+% analysis, data, how data move between the sites), the check that tells you it worked,
+% and a lead line naming the group and what it receives from the other (BSF §4.6, §7).
+\paragraph{Task 1.1: [[name]].} [[Purpose. Approach at the level a referee in this method
+expects. The check.]] Led by the [[...]] group; [[what the other group supplies]].
+
+\paragraph{Task 1.2: [[name]].} [[...]] Led by the [[...]] group; [[...]].
+
+% (4) Expected outcomes and success criterion, stated before the work is done, and what each
+% plausible outcome would mean. Theory: which statement or special case. Computation: which
+% gain over which baseline on which held-out data, read as a finding.
+\paragraph{Expected outcomes and success criterion.} [[The hypothesis is supported if ...;
+it is rejected if ....]]
+
+% (5) Pitfalls and alternatives, numbered if-then items, 10-20% of the block. Each: the
+% likely problem, why it is unlikely given the evidence, the concrete alternative, why the
+% objective survives. Both kinds: technical (the method fails) and interpretive (another
+% explanation, and what separates them). End with what is learned even if the hypothesis fails.
+\paragraph{Pitfalls and alternatives.} (i) If [[technical problem]] ([[why unlikely]]), then
+[[alternative]], which still [[...]]. (ii) If the result could also be explained by
+[[alternative explanation]], [[the control or comparison that separates them]]. Even if
+[[the hypothesis fails]], we obtain [[...]].
+
+\subsection{Objective 2: [[...]]}
+\paragraph{Rationale and hypothesis.} [[...]]
+\paragraph{Preliminary evidence.} [[...]]
+\paragraph{Task 2.1: [[name]].} [[...]] Led by the [[...]] group; [[...]].
+\paragraph{Expected outcomes and success criterion.} [[...]]
+\paragraph{Pitfalls and alternatives.} (i) If [[...]], then [[...]].
+
+% The last block may carry one bounded moonshot, marked as such (craft §9.4).
+\subsection{Objective 3: [[...]]}
+\paragraph{Rationale and hypothesis.} [[...]]
+\paragraph{Preliminary evidence.} [[...]]
+\paragraph{Task 3.1: [[name]].} [[...]] Led by the [[...]] group; [[...]].
+\paragraph{Expected outcomes and success criterion.} [[...]]
+\paragraph{Pitfalls and alternatives.} (i) If [[...]], then [[...]].
+
+% Collaboration, 3/4 to 1 page (BSF §4.7, tests in §7). Criterion C, a separate gate.
+\subsection{The collaboration and the roles of the Israeli and U.S. groups}
+
+\paragraph{Why this pairing.} [[What only the Israeli group brings. What only the U.S. group
+brings. Why the question needs both.]]
+
+\begin{center}
+\begin{tabularx}{\linewidth}{Xcc}
+\toprule
+Task & [[Israeli group]] & [[U.S. group]] \\
+\midrule
+1.1 [[name]] & lead & contributes \\
+1.2 [[name]] & contributes & lead \\
+2.1 [[name]] & co-lead & co-lead \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\paragraph{Interface tasks.} [[The one or two co-led tasks where one group's output is the
+other's input, with the month of each hand-off.]]
+
+\paragraph{How the collaboration runs.} [[Exchange visits: who, how long (more than two full
+working days), which year. Meeting cadence. Shared repository. Co-supervised students. The
+joint papers you expect.]]
+
+% If the PIs held a BSF grant together, say what it produced; one without joint papers must
+% be addressed (BSF §7, §10). Governance in two or three sentences.
+\paragraph{History and governance.} [[Previous joint work and what this grant adds. Who
+decides on changes of direction; how authorship is settled.]]
+
+% ---------------------------------------------------------------------------------------
+% ITEM 4 -- 1/2 page (BSF §4.8). Only the risks that cross objectives; the per-objective
+% fallbacks are in the blocks above -- point to them, do not repeat them.
+% ---------------------------------------------------------------------------------------
+\section{Risk analysis and alternative paths}
+
+\begin{center}
+\begin{tabularx}{\linewidth}{XllX}
+\toprule
+Risk & Likelihood & Effect & Mitigation \\
+\midrule
+{}[[Hand-off between the groups is late]] & [[...]] & [[...]] & [[each group works on archived or simulated inputs until it arrives]] \\
+{}[[Shared instrument, permit, field season, recruitment]] & [[...]] & [[...]] & [[...]] \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\paragraph{If the central hypothesis is wrong.} [[What the project still establishes, and why
+the risk is worth taking.]]
+
+% ---------------------------------------------------------------------------------------
+% ITEM 5 -- 1/2 to 3/4 page (BSF §4.9). Shows the whole project is resourced; the grant mostly
+% pays for the cooperation. Both sides. Consistent with the CV form's current grants and with
+% the budget. Flag anything one side provides to the other (criterion C(b)).
+% ---------------------------------------------------------------------------------------
+\section{Available resources}
+
+\paragraph{Israel ([[institution]]).} Personnel: [[name, role, effort, who pays]]. Equipment
+and facilities: [[named instruments, compute, sites, datasets]]. Other funding: [[grant, and
+why it does not overlap]].
+
+\paragraph{U.S. ([[institution]]).} Personnel: [[...]]. Equipment and facilities: [[...]].
+Other funding: [[...]].
+
+\paragraph{Provided to the partner.} [[Facility, material or instrument one side makes
+available to the other, and when.]]
+
+% ---------------------------------------------------------------------------------------
+% CLOSING -- 1/4 page (BSF §4.10). Not risk, not resources: what will be known, why these two
+% groups now, what it opens next. Then the generative-AI note (BSF §3).
+% ---------------------------------------------------------------------------------------
+\section*{Outlook}
+[[Three or four sentences.]]
+
+\paragraph{Use of generative AI.} [[None was used. / Generative AI was used only for ...;
+the PIs checked all content.]]
+
+% References: here, after item 5, if you tick the checkbox; or as a separate upload headed
+% "References". Full author lists up to four, else three + et al.; the BSF finds referees
+% here (BSF §10).
+% \bibliographystyle{unsrt}
+% \bibliography{refs}
+
+\end{document}

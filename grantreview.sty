@@ -1,0 +1,58 @@
+% =====================================================================
+% grantreview.sty -- review comments for a grant proposal draft
+%
+% Part of the bsf-review kit, generalised from erc-review's ercreview.sty.
+% Each comment is keyed to a rule -- a section of proposal_craft.md or of a
+% funder guide -- so a comment cites a rule rather than a preference.
+% Severities match tools/grant_check.py:
+%
+%   \grblock  {rule}{text}  compliance/missing content -- not submittable
+%   \grscore  {rule}{text}  affects how a named criterion scores
+%   \grpolish {rule}{text}  sentence level, fix in a word pass
+%
+% e.g.  \grscore{craft 9.2}{this is the rationale, not the objective}
+%       \grblock{BSF 4}{research plan never states the U.S. PI's role}
+%
+% Renders as coloured margin notes through todonotes when that package is
+% loaded, otherwise through \marginpar. \listofgrcomments prints a summary
+% page so the author can work the queue without re-reading the draft.
+%
+% Drop every comment for the submission build with either
+%   \usepackage[off]{grantreview}     or     \grantreviewfalse
+%
+% BSF note: margin notes need margin. Turn them off before you check the
+% 2 cm margin and 38-lines-per-page rules on the PDF you will upload.
+%
+% Do NOT put these inside a \section{} argument -- it breaks the TOC.
+% =====================================================================
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{grantreview}[2026/10/28 grant draft review comments]
+
+\RequirePackage{etoolbox}
+\RequirePackage{xcolor}
+
+\newif\ifgrantreview \grantreviewtrue
+\DeclareOption{off}{\grantreviewfalse}
+\DeclareOption{on}{\grantreviewtrue}
+\ProcessOptions\relax
+
+\definecolor{grblockcol}{RGB}{200,30,30}
+\definecolor{grscorecol}{RGB}{225,140,0}
+\definecolor{grpolishcol}{RGB}{60,130,200}
+
+% todonotes may be loaded after this package, so resolve at use time.
+\newcommand{\grnoteimpl}[3]{%
+  \ifgrantreview
+    \ifdef{\todo}%
+      {\todo[color=#1!20,bordercolor=#1,size=\scriptsize]{\textbf{#2}\ #3}}%
+      {\marginpar{\scriptsize\raggedright\textcolor{#1}{\textbf{#2}}\ #3}}%
+  \fi}
+
+\newcommand{\grblock}[2]{\grnoteimpl{grblockcol}{#1}{#2}}
+\newcommand{\grscore}[2]{\grnoteimpl{grscorecol}{#1}{#2}}
+\newcommand{\grpolish}[2]{\grnoteimpl{grpolishcol}{#1}{#2}}
+
+\newcommand{\listofgrcomments}{%
+  \ifdef{\listoftodos}{\listoftodos[Review comments]}{}}
+
+\endinput

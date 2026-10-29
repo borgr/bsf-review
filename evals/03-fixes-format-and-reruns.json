@@ -1,0 +1,18 @@
+{
+  "skills": ["bsf-review"],
+  "query": "Just fix the compliance problems in the research plan, nothing else.",
+  "cwd": "example",
+  "files": ["research_plan.tex"],
+  "tests": "stage 9 handled mechanically, with a re-run and nothing above stage 8 edited (review_protocol §6)",
+  "expected_behavior": [
+    "Replaces \\onehalfspacing with \\linespread{1.5} (or otherwise reaches ≤38 lines/page) and explains the setspace trap in one line (BSF §3).",
+    "Removes or flags the PI summer-salary and 25% overhead sentences, which the BSF does not allow (BSF §9). Because a budget statement is content, it asks before rewriting it as something else.",
+    "Fills nothing that needs a fact: the empty \\cite{} and the TODO in WP2 are reported as questions or left marked, not replaced with invented text.",
+    "Re-runs grant_check.py --profile bsf and reports before/after counts.",
+    "Does not touch the objectives, the problem statement, or the roles, and says in one line that stage-1 and stage-5 findings remain."
+  ],
+  "failure_modes": [
+    "Writing a collaboration section or a resources section 'to clear the BLOCK'. Those are content and need the authors.",
+    "Inventing a citation to fill \\cite{}."
+  ]
+}

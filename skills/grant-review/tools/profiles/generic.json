@@ -1,0 +1,12 @@
+{
+  "name": "Generic -- funder-independent rules only",
+  "guide": "craft",
+  "verified": "n/a",
+  "main_part": "proposal",
+  "parts": {
+    "proposal": {"stems": ["proposal", "research_plan", "project_description", "research_strategy", "narrative", "main", "b1", "b2"], "rule": "craft §1"}
+  },
+  "manual_checks": [
+    "Build the criteria map (review_protocol.md §1) from the call's own documents before reading any finding as a cost."
+  ]
+}
